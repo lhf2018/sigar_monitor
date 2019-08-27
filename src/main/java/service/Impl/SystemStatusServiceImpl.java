@@ -5,6 +5,11 @@ import org.hyperic.sigar.Mem;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pojo.Cpu;
 import pojo.Memory;
 import pojo.Swap;
@@ -13,15 +18,15 @@ import service.SystemStatusService;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+@Service
 public class SystemStatusServiceImpl implements SystemStatusService {
-    private Sigar sigar=new Sigar();
-    @Override
+    private Sigar sigar= new Sigar();
     public String getTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         return df.format(new Date());
     }
     public Cpu getCpu() throws SigarException {
-
         Cpu cpu=new Cpu();
         CpuPerc cpuPerc=sigar.getCpuPerc();
         try {
@@ -43,7 +48,6 @@ public class SystemStatusServiceImpl implements SystemStatusService {
         return cpu;
     }
 
-    @Override
     public Memory getMemory() {
         Memory memory=new Memory();
         try {
@@ -58,7 +62,6 @@ public class SystemStatusServiceImpl implements SystemStatusService {
         return memory;
     }
 
-    @Override
     public Swap getSwap() {
         return null;
     }

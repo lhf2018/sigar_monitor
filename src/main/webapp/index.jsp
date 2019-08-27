@@ -2,18 +2,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>用WebSocket实时获知比特币价格</title>
+    <title>用WebSocket实时获知系统参数</title>
 </head>
 <body>
+<div align="center" style="color:darkblue;font-size:1.2em;margin-top:10px">当前系统参数</div>
+<div align="center" style="color:blue;font-size:0.9em;margin-top:20px">当前时间： <span id="time" style="color: black">1</span></div>
 
-<div style="width:400px;margin:20px auto;border:1px solid lightgray;padding:20px;text-align:center;">
-    <div align="center" style="color:darkblue;font-size:1.2em;margin-top:10px">当前系统参数</div>
+<div style="position: relative;width:400px;margin:20px auto;border:1px solid lightgray;padding:20px;text-align:center;">
+    <div align="center" style="color:darkblue;font-size:1.2em;margin-top:10px">CPU参数</div>
     <div style="color:blue;font-size:0.9em;margin-top:20px">CPU总使用率： <span id="combined" style="color: black">1</span> %</div>
-    <div style="color:blue;font-size:0.9em;margin-top:20px">当前内存使用率： <span id="MemUsed_p" style="color: black">1</span> %</div>
-    <div style="color:blue;font-size:0.9em;margin-top:20px">当前内存空闲率： <span id="MemFree_p" style="color: black">1</span> %</div>
-    <div style="color:blue;font-size:0.9em;margin-top:20px">当前时间： <span id="time" style="color: black">1</span></div>
 
 </div>
+<div style="position: relative;width:400px;margin:20px auto;border:1px solid lightgray;padding:20px;text-align:center;">
+    <div align="center" style="color:darkblue;font-size:1.2em;margin-top:10px">内存参数</div>
+    <div style="color:blue;font-size:0.9em;margin-top:20px">当前内存使用率： <span id="MemUsed_p" style="color: black">1</span> %</div>
+    <div style="color:blue;font-size:0.9em;margin-top:20px">当前内存空闲率： <span id="MemFree_p" style="color: black">1</span> %</div>
+</div>
+
 
 </body>
 
