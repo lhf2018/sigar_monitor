@@ -3,7 +3,6 @@ package server;
 import org.hyperic.sigar.SigarException;
 import pojo.Cpu;
 import pojo.Memory;
-import service.Impl.SystemStatusServiceImpl;
 import service.SystemStatusService;
 
 

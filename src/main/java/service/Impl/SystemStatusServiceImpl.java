@@ -4,9 +4,7 @@ import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.Mem;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import pojo.Cpu;
 import pojo.Memory;
 import pojo.Swap;
@@ -16,7 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SystemStatusServiceImpl implements SystemStatusService {
-    private Sigar sigar=new Sigar();
+    @Autowired
+    public Sigar sigar;
+
     public String getTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         return df.format(new Date());

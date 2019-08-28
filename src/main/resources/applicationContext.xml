@@ -8,4 +8,6 @@
      http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
     <context:component-scan base-package="service,server"/>
     <context:annotation-config/>
+    <bean id="sigar" class="org.hyperic.sigar.Sigar"/>
+    <bean id="systemStatusService" class="service.Impl.SystemStatusServiceImpl"/>
 </beans>
