@@ -1,5 +1,7 @@
 package server;
 
+import org.springframework.stereotype.Controller;
+
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
@@ -15,6 +17,7 @@ public class MonitorServer {
     public void onOpen(Session session){
         this.session=session;
         ServerManager.add(this);
+        new Thread(new MonitorDataCenter()).start();
     }
     public void sendMessage(String message) throws IOException {
         this.session.getBasicRemote().sendText(message);
